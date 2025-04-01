@@ -40,22 +40,21 @@
         }
     </script>
     <script type="module"> 
-        import { GoogleGenerativeAI } from "@google/generative-ai";
+        import { GoogleGenerativeAI } from "@(What Goes Here?)"; // <--- fill in here -- Hint: what is the name of the library we are using? (1/5)
     
-        // add your api key here
-        const API_KEY = "AIzaSyCgvIwUcATn51NMxW-wxOJk-EPFij5ICH8";
+        const API_KEY = "Add your API key here"; // <-- we need to get our api from the google gemini api website (2/5)
     
         // initialize the model
-        const genAI = new GoogleGenerativeAI(API_KEY);
+        const genAI = new GoogleGenerativeAI(________________);// <--- fill in here too --- Hint: look at the documentation for the necesary arguments (3/5)
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
-        async function handleButtonClick() {
-            //get our input
+        async function ____________________() { // <-- what is the name of our function? Hint: look at html for the button (4/5)
+            //get your input
             const input = document.getElementById('textInput').value;
             console.log('Input value:', input);
             
             //call the model on the input
-            const result = await model.generateContent(input);
+            const result = await _________________.generateContent(input); // <--- Fill in here -- Hint: what is our model called? (5/5)
             console.log(result.response.text());
         }
 

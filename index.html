@@ -3,65 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathan's Presentation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        input, button {
-            margin: 5px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        p{
-            margin: 40px;
-            padding: 10px;
-            font-size: 9px; 
-        }
-    </style>
+    <title>Welcome to Halfland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>prompt text:</h1>
-    <input type="text" id="textInput" placeholder="type the prompt here">
-    <button onclick="handleButtonClick()">Submit</button>
 
-    <!-- this is how we import google's gemini library  -->
-    <script type="importmap">
-        {
-          "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-          }
-        }
-    </script>
-    <script type="module"> 
-        import { GoogleGenerativeAI } from "@(What Goes Here?)"; // <--- fill in here -- Hint: what is the name of the library we are using? (1/8)
-    
-        const API_KEY = "Add your API key here"; // <-- we need to get our api from the google gemini api website: https://aistudio.google.com/apikey (2/8)
-    
-        // initialize the model
-        const genAI = new GoogleGenerativeAI(________________);// <--- fill in here too --- Hint: look at the documentation for the necesary arguments (3/8)
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    
-        async function ____________________() { // <-- what is the name of our function? Hint: look at html for the button (4/8)
-            //get your input
-            const input = document.getElementById('_________').value; // <--- fill: what's the ID of our text field? (5/8)
-            console.log('Input value:', _________); // <--- fill (6/8)
-            
-            //call the model on the input
-            const result = await _________________.generateContent(input); // <--- Fill in here -- Hint: what is our model called? (7/8)
-            console.log(____________.response.text()); //<--- fill (8/8)
-        }
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="logo">Halfland</a>
+            <ul class="nav-links">
+                <li><a href="#first">Goals</a></li>
+                <li><a href="#second">Laws</a></li>
+                <li><a href="#third">Economics</a></li>
+                <li><a href="#fourth">Misc</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to Halfland</h1>
+            <p>Island of Balance</p>
+        </div>
+    </header>
 
-        // make it global
-        window.handleButtonClick = handleButtonClick;
-    </script>
+    <main class="main-content">
+        <section id="first" class="section1">
+            <h2>Goals</h2>
+            <p>The island has a few overall goals such as:</p>
 
-    <p type="text">extension practice: try and make it so that the output from the model is displayed here</p>
+            <p>Economic: Full employment, Economic Growth</p>
+            <p>Socioeconomic: Economic Equity, Financial Security</p>
+            <p>Full employment: We wanted to make sure that everyone on the island were working and providing for the island rather than solely benefiting from others.</p> 
+            <p>Economic growth: ensure that the quality of living for people living on the island would improve and society would not stagnate.</p>
+            <p>Economic Equity: Make sure resources get distributed fairly evenly so that everyone has access to opportunities and services. This way, everyone has the chance to improve their quality of life by working hard and not being limited by rampent inequalities like what is present in the US today.</p>
+            <p>Financial Security: Ensure that most people on the island are able to support a at least a comfortable stardard of living, and in case of an unforeseen disaster peoples’ financial situations won’t be in huge jeopardy. This one is important for the project since our system will be stressed tested by several unexpected situations.</p>
+            <p>Full employment and economic equity were chosen as the most important economic goals. Economic growth and justice are still considered important but not nearly as much. Economic freedom and Economic efficiency were not prioritized.</p>
+            <p>Economic efficiency was not considered important, because we wanted to make a community that was self sufficient and prevent over-reliance on other areas.</p>
+        </section>
+
+        <section id="second" class="section bg-dark">
+            <h2>Laws</h2>
+            <p>These are some of the laws that apply to citizens.</p>
+
+            <p>Quotas</p>
+            <ul>
+                <li>All able-bodied and of age citizens are obligated to complete tasks for the well-being of the nation, assigned based on physical and mental capabilities.</li>
+                <li>Quotas are typically assigned for items individuals are best suited to produce or for what is needed on the island.</li>
+                <li>Collaboration is allowed as long as everyone’s quota is met.</li>
+                <li>Quotas must be fulfilled on government land.</li>
+                <li>Exploitation or destruction of government property results in prison time and a permanent increase in the quota for the perpetrator.</li>
+                <li>Labor during quota hours is unpaid, as it is a civic requirement for all citizens.</li>
+                <li>If quotas are not met, workers lose privileges, with increasing punishments for repeated failures:
+                    <ul>
+                        <li>Strike 1: Privileges to sell on the market are lost until the missed quota is completed. No hard deadline.</li>
+                        <li>Strike 2: Privileges to sell on the market are lost until 1.5 times the missed quota is completed. No hard deadline.</li>
+                        <li>Strike 3: Loss of benefits and resources. Severity increases with additional strikes.</li>
+                    </ul>
+                </li>
+                <li>The punishments reset every 5 years.</li>
+                <li>If quotas are met, citizens have the economic freedom to make their own decisions, such as producing more of their product to export, buying land, or providing additional things for the island. There is a separate portion of the land allocated for this reason.</li>
+                <li>Profits in this area will be taxed on a sliding scale, ranging from 10-25%.</li>
+            </ul>
+            <p>Government Structure</p>
+            <ul>
+                <li>Triumvirate rule where leaders serve until death or resignation.</li>
+                <li>If a death or resignation occurs, a new leader is appointed only if the majority of the cabinet agrees; otherwise, they can veto the appointment.</li>
+                <li>Cabinet appointed through ranked choice voting.</li>
+                <li>Two cabinet members are appointed per year, with terms lasting 5 years.</li>
+                <li>One cabinet member is permanently appointed.</li>
+                <li>Both the cabinet and triumvirate rulers make laws, decisions, and regulations, but each party has the ability to veto the other's decisions.</li>
+            </ul>
+        </section>
+
+        <section id="third" class="section">
+            <h2>Economic Ideas</h2>
+            <p>What to produce?</p>
+            <p>
+                The government determines the essentials to be produced, but once an individual meets their quota, they have the economic freedom to produce whatever they want.
+            </p>
+            <p>How to produce?</p>
+            <p>
+                The government commands the citizens on what to produce and sets the requirements. However, the citizens choose the methods of production to fulfill their quotas.
+            </p>
+            <p>Who gets it?</p>
+            <p>
+                The essential goods are distributed to the citizens by the government. Excess goods (goods beyond quota) are sold to whoever pays for them in the free market.
+            </p>
+            <p>Scarcity, Trade-offs, and Opportunity Costs</p>
+            <p>
+            Naturally, resources are scarce: labor, capital, and land. This is perpetuated by the fact that our nation is an island, making it more difficult to acquire resources from external sources. Our system’s use of quotas deals with scarcity by ensuring that every citizen uses their labor (a resource) in a way that benefits the community. In this system, citizens are essentially left with two options: whether to meet their quota or not. Each option has several incentives as well as opportunity costs. The incentives for fulfilling the quota includes avoiding receiving a punishment and having economic freedom: producing extra stuff to sell, participating in the open markets, and purchasing items and experiences, and not being shunned by society for being selfish and not putting the interests of the community first. However, there are also opportunity costs associated with decision, which includes the things they could have done instead of working to complete their quota–perhaps using their time to enjoy life, doing another form of work they enjoy more, etc. Overall, the system is designed to push people choose to comply by making the incentives of doing so outweigh any potential opportunity costs, which in turn will encourage citizens to work hard and efficiently, benefitting their nation and potentially themselves as well.
+            </p>
+        </section>
+
+        <section id="fourth" class="section bg-dark">
+            <h2>Misc</h2>
+
+            <p>Ownership</p>
+            <p>
+                The essential/quota land is officially owned by the government. To guarantee that everyone can meet their assigned production quota, the government will provide essential land to its citizens. The land in the free market side of the island will be privately owned by citizens, purchased or leased once quotas have been met.
+            </p>
+            <p>
+                Essential capital (capital that supports quota work, such as water systems, farming machinery, and roads) will be owned by the government in trust for all citizens because these assets are essential for meeting everyone’s quotas and for island survival. Market capital (goods in the free market zone) exclusively used are owned privately by citizens. This encourages innovation in the free-market zone and gives citizens a tangible reward for surpassing quota obligations.
+            </p>
+            <p>
+                Essential/quota goods will be distributed in community distribution centers—public markets or depots located in each settlement. Citizens show an ID or household card to collect their share, with rations adjusted for household size and health needs as determined by the government. Market goods will be distributed in open marketplaces.
+            </p>
+
+            <div class="island-map-container" style="text-align:center; margin: 2em 0;">
+                <img src="islandmap.png" alt="Map of the Island" style="max-width:100%; height:auto; border-radius:8px;">
+                <p style="font-size:0.95em; color:#666;">Map of the island's land ownership</p>
+            </div>
+
+            <p>Wefare</p>
+            <p>
+                In the island’s quota-based economy, caring for the poor is directly built into the system so nobody is neglected. Everyone able to work is assigned a production quota, so basic food, water, and materials are already guaranteed for the whole population. Citizens collect their share of essentials from the community distribution centers whether they are rich or poor. Because essentials are prepaid with labor, no one needs cash to receive them. Elderly, disabled, or temporarily ill residents are formally exempt from quotas.
+            </p>
+
+            <p>Culture</p>
+            <p>
+                The prevailing culture of this island society would be grounded in collective responsibility. Every citizen realizes the importance of contributing to the survival of the community through mandatory quotas. At the same time, once basic obligations are met, individuals are free to trade and pursue personal profit, encouraging innovation. The overarching philosophy is “Contribute to survive.”
+            </p>
+            <p>
+                This system is designed to ensure the survival of the population. Without a strong ethic of collective responsibility, the mandatory quota system could fail, leaving the island without enough food and resources to sustain everyone. Also, without the free market land, citizens wouldn’t have an incentive to innovate or produce beyond their quotas.
+            </p>
+        </section>
+
+        <section id="evaluation" class="section">
+            <h2>Evaluation</h2>
+
+            <p>Here is an evaluation of the island from one of the residents.</p>
+
+            <ul>
+                <li>Pros:
+                    <ul>
+                        <li>Creates a more socially equitable society</li>
+                        <li>Encourages people to work their hardest to fulfill the quotas</li>
+                        <li>Breeds innovation to be more efficient</li>
+                        <li>More self-reliant nation, by making most of the things needed to sustain the nation</li>
+                    </ul>
+                </li>
+                <li>Cons:
+                    <ul>
+                        <li>Restrictions on the economic freedom of the citizens</li>
+                        <li>Less efficient by not specializing</li>
+                        <li>Could result in the quality of products/work being worse than it would be otherwise if it impacted their finances directly</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                I would call our economic system “Conditional free market socialism”. Overall the economy is socialist due to heavy amounts of resource distribution and the equitable quota system. However, citizens have the economic freedom to do whatever they want, conditional on if they are able to complete their obligation to the government and society.
+            </p>
+
+            <div style="text-align:center; margin: 2em 0;">
+                <img src="line.png" alt="Where our economy falls on the line" style="max-width:100%; height:auto;">
+            </div>
+
+            <p>
+                Our economic system is much different than the US, because from an economic perspective, people are not automatically given the freedom to do whatever they want—instead, they have to earn it. Additionally, our system prioritizes equitable distribution of resources, making sure that everyone has at least the bare minimum to live life comfortably, while in the US people may have to work hard in order to live comfortably. However, people on our island who manage to complete their quota have essentially the same rights as those that live in the US, being able to make economic decisions on their own.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Nathan, Luke, Aiden</p>
+    </footer>
+
 </body>
 </html>
